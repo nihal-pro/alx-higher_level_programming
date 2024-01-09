@@ -1,0 +1,90 @@
+The ``7-base_geometry`` module
+##############################
+
+Using ``my_list``
+-------------------
+
+This is an example text file in reStructuredText format. First import
+``my_list`` from the ``my_list`` module:
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("height", "89")
+Traceback (most recent call last):
+TypeError: height must be an integer
+
+>>> bg.integer_validator("hi", "Hello")
+Traceback (most recent call last):
+TypeError: hi must be an integer
+
+>>> bg.integer_validator("width", )
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("name", -5)
+Traceback (most recent call last):
+ValueError: name must be greater than 0
+
+>>> bg.integer_validator("test", 0)
+Traceback (most recent call last):
+ValueError: test must be greater than 0
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.integer_validator("age", 30)
+
+>>> bg.integer_validator("count", 0)
+Traceback (most recent call last):
+ValueError: count must be greater than 0
+
+>>> bg.integer_validator("quantity", 1000)
+
+>>> bg.integer_validator("weight", -5)
+Traceback (most recent call last):
+ValueError: weight must be greater than 0
+
+>>> bg.integer_validator("price", 3.14)
+Traceback (most recent call last):
+TypeError: price must be an integer
+
+>>> bg.integer_validator("temperature", "25")
+Traceback (most recent call last):
+TypeError: temperature must be an integer
+
+>>> bg.integer_validator("height", None)
+Traceback (most recent call last):
+TypeError: height must be an integer
+
+>>> bg.integer_validator("length", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: length must be an integer
+
+>>> bg.integer_validator("width", {})
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", True)
+>>> bg.integer_validator("width", False)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.width = 15
+>>> bg.width = "15"
+>>> bg.height = "Hello"
+>>> bg1 = BaseGeometry(15, 12)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
