@@ -1,0 +1,85 @@
+The ``1-my_list`` module
+##############################
+
+Using ``my_list``
+-------------------
+
+This is an example text file in reStructuredText format. First import
+``my_list`` from the ``my_list`` module:
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList([1, 5, 8, 3, 2])
+>>> print(my_list)
+[1, 5, 8, 3, 2]
+>>> my_list.print_sorted()
+[1, 2, 3, 5, 8]
+
+>>> my_list = MyList([1, 5, 8, 3, 2])
+>>> my_list.append(7)
+>>> print(my_list)
+[1, 5, 8, 3, 2, 7]
+>>> my_list.print_sorted()
+[1, 2, 3, 5, 7, 8]
+>>> print(my_list)
+[1, 5, 8, 3, 2, 7]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+>>> my_list = MyList([1, 2, 3, 5, 8])
+>>> print(my_list)
+[1, 2, 3, 5, 8]
+>>> my_list.print_sorted()
+[1, 2, 3, 5, 8]
+
+>>> my_list = MyList(["1", 5, 8, 3, 2])
+>>> print(my_list)
+['1', 5, 8, 3, 2]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList([])
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+TypeError: 'NoneType' object is not iterable
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList(5)
+Traceback (most recent call last):
+TypeError: 'int' object is not iterable
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList("hello")
+>>> print(my_list)
+['h', 'e', 'l', 'l', 'o']
+>>> my_list.print_sorted()
+['e', 'h', 'l', 'l', 'o']
