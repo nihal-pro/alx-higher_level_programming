@@ -1,0 +1,57 @@
+the `text_indentation` module
+***************************
+
+Using `text_indentation`
+---------------------
+
+First import function `text_indentation` from the `text_indentation` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Start ALL Test:
+
+    handle Error : test
+
+    >>> text_indentation(12)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation("test:")
+    test:
+    <BLANKLINE>
+
+	>>> text_indentation("test")
+	test
+
+	>>> text_indentation(":test")
+	:
+	<BLANKLINE>
+	test
+
+	>>> text_indentation(".")
+	.
+	<BLANKLINE>
+
+	>>> text_indentation(" ")
+
+	>>> text_indentation("")
+
+	>>> text_indentation(" ?")
+	?
+	<BLANKLINE>
+
+    normal test
+    >>> text_indentation("hi! mohamed. how are you ? are you good ? mohamed: yes")
+    hi! mohamed.
+    <BLANKLINE>
+    how are you ?
+    <BLANKLINE>
+    are you good ?
+    <BLANKLINE>
+    mohamed:
+    <BLANKLINE>
+    yes
