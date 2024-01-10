@@ -1,0 +1,111 @@
+The `add_integer` module
+*************************
+
+Using `add_integer`
+-------------------
+
+First import Function `add_integer` from the `add_integer` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Start ALL Test:
+
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(3, -5)
+    -2
+
+    >>> add_integer(-3)
+    95
+
+    >>> add_integer(-3, -5)
+    -8
+
+    >>> add_integer(3, 5.6)
+    8
+
+    >>> add_integer(3.5, 5.3)
+    8
+
+    >>> add_integer(3.5)
+    101
+
+    >>> add_integer(1.2, -1.5)
+    0
+
+    >>> add_integer(-2.5, -4.2)
+    -6
+
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+	...
+    TypeError: a must be an integer
+
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last):
+	...
+    TypeError: b must be an integer
+
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+	...
+    TypeError: a must be an integer
+
+	>>> add_integer(5, -float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(-float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+    	>>> add_integer("mohamed", 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer("mohamed", "test")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, "test")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer("mohamed")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(None, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(None, None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
