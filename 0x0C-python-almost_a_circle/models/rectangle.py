@@ -20,8 +20,6 @@ class Rectangle(Base):
         
         @width.setter
         def width(self, value):
-            if value <= 0:
-                raise ValueError("Width must be > 0")
             self.__width = value
 
         """Getter and setter for height"""
@@ -31,8 +29,6 @@ class Rectangle(Base):
         
         @height.setter
         def height(self, value):
-            if value <= 0:
-                raise ValueError("height must be > 0")
             self.__height = value
 
         """Getter and setter for x"""
