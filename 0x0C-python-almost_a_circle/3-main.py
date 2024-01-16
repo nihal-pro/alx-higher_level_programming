@@ -6,6 +6,7 @@ if __name__ == "__main__":
 
     r1 = Rectangle(3, 2)
     print(r1.area())
+    print(r1)
 
     r2 = Rectangle(2, 10)
     print(r2.area())
