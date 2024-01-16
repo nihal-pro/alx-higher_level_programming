@@ -2,6 +2,7 @@
 """Create Rectangle that inherits from Base"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Create class Base"""
 
@@ -16,6 +17,8 @@ class Rectangle(Base):
         """Getter and setter for Width"""
         @property
         def width(self):
+            """retrieve The width of Rectangle.
+            Return: an integer of the width."""
             return self.__width
         
         @width.setter
@@ -25,6 +28,8 @@ class Rectangle(Base):
         """Getter and setter for height"""
         @property
         def height(self):
+            """retrieve The height of Rectangle.
+            Return: an integer of the height."""
             return self.__height
         
         @height.setter
@@ -34,17 +39,21 @@ class Rectangle(Base):
         """Getter and setter for x"""
         @property
         def x(self):
+            """retrieve The x of Rectangle.
+            Return: an integer of the x."""
             return self.__x
         
-        @width.setter
+        @x.setter
         def x(self, value):
             self.__x = value
         
         """Getter and setter for y"""
         @property
         def y(self):
+            """retrieve The y of Rectangle.
+            Return: an integer of the y."""
             return self.__y
         
-        @width.setter
+        @y.setter
         def y(self, value):
             self.__y = value
