@@ -1,14 +1,30 @@
 #!/usr/bin/python3
-""" 1-main """
+""" Check """
 from models.rectangle import Rectangle
 
-if __name__ == "__main__":
+r = Rectangle(12, 14, 4)
+if r is None:
+    print("Can't create Rectangle")
+    exit(1)
 
-    r1 = Rectangle(10, 2)
-    print(r1.id)
+if r._Rectangle__width != 12:
+    print("Wrong width: {}".format(r._Rectangle__width))
+    exit(1)
 
-    r2 = Rectangle(2, 10)
-    print(r2.id)
+if r._Rectangle__height != 14:
+    print("Wrong height: {}".format(r._Rectangle__height))
+    exit(1)
 
-    r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)
+if r._Rectangle__x != 4:
+    print("Wrong x: {}".format(r._Rectangle__x))
+    exit(1)
+
+if r._Rectangle__y != 0:
+    print("Wrong y: {}".format(r._Rectangle__y))
+    exit(1)
+
+if r.id != 1:
+    print("ID is not initialized at 1")
+    exit(1)
+
+print("OK", end="")
