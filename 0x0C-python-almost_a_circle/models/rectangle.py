@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """Create Rectangle that inherits from Base"""
-from curses import keyname
-from multiprocessing import Value
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Create class Base"""
+    """Create class rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Create object of the class Rectangle"""
