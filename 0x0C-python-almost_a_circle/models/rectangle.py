@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Create Rectangle that inherits from Base"""
+from curses import keyname
+from multiprocessing import Value
 from models.base import Base
 
 
@@ -87,10 +89,14 @@ class Rectangle(Base):
         return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}'
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''Assign value to attribute using *args'''
         List = ['id', 'width', 'height', 'x', 'y']
 
-        for i in range(len(List)):
-            if i < len(args):
-                setattr(self, List[i], args[i])
+        if len(args) != 0:
+            for i in range(len(List)):
+                if i < len(args):
+                    setattr(self, List[i], args[i])
+        else:
+            for keyname, Value in kwargs.items():
+                setattr(self, keyname, Value)
