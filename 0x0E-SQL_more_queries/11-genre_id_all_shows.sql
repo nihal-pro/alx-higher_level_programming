@@ -1,6 +1,5 @@
--- Genre ID by show in localhost
-SELECT tv_shows.title, IFNULL(tv_show_genres.genre_id, 'NULL') AS genre_id
-FROM tv_shows
-LEFT JOIN tv_show_genres 
-ON tv_shows.id = tv_show_genres.tv_show_id
-ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
+--  lists all shows contained in the database hbtn_0d_tvshows
+-- cat 11-genre_id_all_shows.sql | sudo mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+SELECT C.title, S.genre_id FROM tv_shows C
+LEFT JOIN tv_show_genres S ON C.id = S.show_id
+ORDER BY C.title, S.genre_id ASC;
