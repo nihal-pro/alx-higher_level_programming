@@ -22,7 +22,7 @@ if __name__ == "__main__":
             end = ''
         else:
             sep = ''
-            end = '\n'
         print(row[0] + sep, end=end)
+    print()
     cur.close()
     conn.close()
