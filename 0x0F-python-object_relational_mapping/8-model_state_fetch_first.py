@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Write a script that lists all State objects from the database'''
+'''Write a script that lists first State objects from the database'''
 
 import sys
 import sqlalchemy
