@@ -11,4 +11,6 @@ class City(Base):
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, nullable=False)
     name = sqlalchemy.Column(sqlalchemy.String(128), nullable=False)
-    state_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.sql.schema.ForeignKey('states.id'), nullable=False)
+    state_id = sqlalchemy.Column(
+        sqlalchemy.Integer, sqlalchemy.sql.schema.ForeignKey('states.id'),
+        nullable=False)
