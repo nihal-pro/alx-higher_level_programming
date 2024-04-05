@@ -1,11 +1,23 @@
 #!/usr/bin/python3
-"""import model"""
+"""A script tha:
+- takes in a letter
+- sends POST request to http://0.0.0.0:5000/search_user
+with the letter as a parameter.
+"""
+import sys
+import requests
+
 
 if __name__ == "__main__":
-    import requests
-    from sys import argv
-    request = requests.get(argv[1])
-    if request.status_code >= 400:
-        print("Error code: {}".format(request.status_code))
-    else:
-        print(request.text)
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
+    payload = {"q": letter}
+
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
+    try:
+        response = r.json()
+        if response == {}:
+            print("No result")
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
+    except ValueError:
+        print("Not a valid JSON")
