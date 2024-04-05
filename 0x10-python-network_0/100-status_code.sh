@@ -1,3 +1,3 @@
 #!/bin/bash
-# Displays the size of the status code of the response of a curl request
-curl -so /dev/null -w '%{http_code}' "$1"
+# Sends a GET request to a given URL and display the response status code.
+curl -s -o /dev/null -w "%{http_code}" "$1"
